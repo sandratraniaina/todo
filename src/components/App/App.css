@@ -1,0 +1,4 @@
+.wrapper {
+    display: grid;
+    grid-row: 40rem auto;
+}
