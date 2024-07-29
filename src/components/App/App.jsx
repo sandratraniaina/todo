@@ -1,11 +1,14 @@
 import React from 'react';
 
 import './App.css';
+import TaskForm from '../TaskForm/TaskForm';
 
 const App = () => {
     return (
         <div className='wrapper'>
-            <header className='header'>Header</header>
+            <header className='header'>
+                <TaskForm />
+            </header>
             <main className='main'>
                 <section className='task-column'>Task section 1</section>
                 <section className='task-column'>Task section 2</section>
