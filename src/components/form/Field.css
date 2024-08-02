@@ -1,0 +1,14 @@
+.input-field {
+    width: fit-content;
+
+    display: grid;
+    gap: .5rem;
+}
+
+.input-field label {
+    font-weight: bold;
+}
+
+.input-field input {
+    padding: .5rem ;
+}
