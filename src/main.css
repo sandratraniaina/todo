@@ -1,3 +1,12 @@
+:root {
+    --clr-neutral-200: #181818;
+    --clr-neutral-100: #2f2f2f;
+
+    --clr-red: #f40102;
+
+    --clr-primary: #00e075;
+}
+
 *,
 *::before,
 *::after {
