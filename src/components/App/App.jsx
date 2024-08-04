@@ -7,7 +7,7 @@ import Form from '../form/Form';
 const App = () => {
     return (
         <>
-            <p>Hello World</p>
+            <Form />
         </>
     )
 };
