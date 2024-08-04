@@ -1,5 +1,5 @@
 .input-field {
-    width: fit-content;
+    width: 20rem;
 
     display: grid;
     gap: .5rem;
@@ -7,6 +7,7 @@
 
 .input-field label {
     font-weight: bold;
+    color: var(--clr-neutral-000);
 }
 
 .input-field input {

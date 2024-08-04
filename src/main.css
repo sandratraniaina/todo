@@ -1,6 +1,7 @@
 :root {
     --clr-neutral-200: #181818;
     --clr-neutral-100: #2f2f2f;
+    --clr-neutral-000: #e4e4e4;
 
     --clr-red: #f40102;
 
@@ -23,4 +24,5 @@ body {
 
     display: grid;
     place-content: center;
+    background: var(--clr-neutral-200);
 }

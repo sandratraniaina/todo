@@ -25,7 +25,6 @@ function Form() {
             <button type='button' className='form__submit-button'>
                 Add
             </button>
-            <hr className='form__separator' />
         </div>
     )
 }

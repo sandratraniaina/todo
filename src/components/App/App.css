@@ -1,9 +1,19 @@
 .wrapper {
-    padding: 1rem;
+    padding: 1.5rem;
+    display: grid;
+    gap: 1rem;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: max-content;
+    
+    background: var(--clr-neutral-100);
+}
 
-    border: 1px solid red;
+.wrapper>h1 {
+    text-align: center;
+    color: var(--clr-neutral-000);
+}
+
+.container {
+    display: grid;
+    gap: 1rem;
 }
