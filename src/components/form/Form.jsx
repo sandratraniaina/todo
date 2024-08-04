@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Field from './Field';
+import './Form.css';
 
 function Form() {
     return (
