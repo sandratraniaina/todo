@@ -7,7 +7,7 @@ import Form from '../form/Form';
 const App = () => {
     return (
         <div className='wrapper'>
-            <h1>React basic To-do list</h1>
+            <h1>React basic To-do</h1>
             <div className='container'>
                 <Form />
                 <hr />
