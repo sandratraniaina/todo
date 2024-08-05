@@ -3,6 +3,7 @@ import React from 'react';
 import './App.css';
 
 import Form from '../form/Form';
+import Task from '../task/Task';
 
 const App = () => {
     return (
@@ -11,6 +12,10 @@ const App = () => {
             <div className='container'>
                 <Form />
                 <hr />
+                <div className='task-container' >
+                    <Task taskName={"Doing workout"} taskDescription={"Start at 6AM"} isCompleted={true} />
+                    <Task taskName={"Doing workout"} taskDescription={"Start at 6AM"} isCompleted={false} />
+                </div>
             </div>
         </div>
     )

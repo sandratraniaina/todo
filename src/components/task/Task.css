@@ -1,0 +1,32 @@
+.task {
+    width: 70%;
+    padding: 1rem 1.5rem 1rem;
+    background: var(--clr-neutral-050);
+    box-shadow: 0 0 5px rgba(30, 30, 30, 0.818);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task .task__name {
+    color: var(--clr-primary);
+}
+
+.task .task__actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.task .task__actions > p {
+    text-decoration: underline;
+    font-weight: 400;
+}
+
+.task .task__actions > p.delete {
+    color: var(--clr-red);
+}
+
+.task .task__actions > p.update {
+    color: var(--clr-primary-2);
+}
