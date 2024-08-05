@@ -23,7 +23,7 @@ function Form() {
                 title={"Task Description"}
                 placeHolder={"example: Start at 6AM"}
             />
-            <Button text={"Add"} type={"button"} onClickHandler={() => {}} />
+            <Button text={"Add"} type={"button"} onClickHandler={() => { }} />
         </div>
     )
 }
