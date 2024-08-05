@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Field from './Field';
+import Button from './Button';
 import './Form.css';
 
 function Form() {
@@ -22,9 +23,7 @@ function Form() {
                 title={"Task Description"}
                 placeHolder={"example: Start at 6AM"}
             />
-            <button type='button' className='form__submit-button'>
-                Add
-            </button>
+            <Button text={"Add"} type={"button"} onClickHandler={() => {}} />
         </div>
     )
 }

@@ -1,0 +1,12 @@
+.form button {
+    padding: .5rem  2rem;
+
+    height: fit-content;
+    align-self: flex-end;
+    
+    font-weight: 600;
+
+    color: var(--clr-neutral-000);
+    background: var(--clr-primary);
+    border: none;
+}
