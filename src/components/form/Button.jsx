@@ -2,9 +2,9 @@ import React from 'react';
 
 import './Button.css';
 
-const Button = ({text, onClickHandler}) => {
+const Button = ({text, neutral, onClickHandler}) => {
   return (
-    <button type="button" onClick={onClickHandler}>
+    <button type="button" className={neutral ? "neutral" : ""} onClick={onClickHandler}>
         {text}
     </button>
   )

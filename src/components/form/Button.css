@@ -1,4 +1,4 @@
-.form button {
+button {
     padding: .5rem  2rem;
 
     height: fit-content;
@@ -9,4 +9,8 @@
     color: var(--clr-neutral-000);
     background: var(--clr-primary);
     border: none;
+}
+
+button.neutral {
+    background: var(--clr-neutral-050);
 }
