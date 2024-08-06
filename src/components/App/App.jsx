@@ -7,12 +7,23 @@ import Task from '../task/Task';
 import Button from '../form/Button';
 
 const App = () => {
-    const filterTasks = (taskStatus) => {
-        return tasks.filter((task) => task.completed == taskStatus);
-    }
+    const [tasks, setTasks] = useState([
+        {
+            name: "Doing workout",
+            description: "Start at 6Am",
+            status: "complete"
+        },
+        {
+            name: "Cook",
+            description: "Cook our meal",
+            status: "todo"
+        }
+    ]);
+    const [renderedTask, setRenderedTask] = useState(filterTasks(tasks, "todo"));
 
-    const [tasks, setTasks] = useState([]);
-    const [renderedTask, setRenderedTask] = useState(filterTasks("todo"));
+    function filterTasks(tasks, taskStatus) {
+        return tasks.filter((task) => task.status == taskStatus);
+    }
 
     return (
         <div className='wrapper'>
@@ -22,12 +33,12 @@ const App = () => {
                 <hr />
                 <div className='task-container' >
                     <div className='tab-control'>
-                        <Button text={"TODO"} type={"button"} onClickHandler={() => { }} />
-                        <Button text={"Completed"} type={"button"} onClickHandler={() => { }} neutral={true} />
+                        <Button text={"TODO"} type={"button"} onClickHandler={() => setRenderedTask(filterTasks(tasks, "todo"))} />
+                        <Button text={"Completed"} type={"button"} onClickHandler={() => { setRenderedTask(filterTasks(tasks, "complete")) }} neutral={true} />
                     </div>
                     {
-                        renderedTask.map((task) => {
-                            <Task taskName={task.name} taskDescription={task.description} status={task.status} />
+                        renderedTask.map((task, index) => {
+                            return <Task key={index} taskName={task.name} taskDescription={task.description} status={task.status} updateHandler={() => { }} deleteHandler={() => { }} />;
                         })
                     }
                 </div>
