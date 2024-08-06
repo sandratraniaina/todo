@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Task.css';
 
-const Task = ({ taskName, taskDescription, isCompleted, deleteHandler, updateHandler }) => {
+const Task = ({ taskName, taskDescription, status, deleteHandler, updateHandler }) => {
     return (
         <div className='task'>
             <div className='task__details'>
@@ -10,7 +10,7 @@ const Task = ({ taskName, taskDescription, isCompleted, deleteHandler, updateHan
                 <p className='task__description' >{taskDescription}</p>
             </div>
             <div className='task__actions'>
-                <p className='task__action update' onClick={updateHandler}>{isCompleted ? "Undo" : "Done"}</p>
+                <p className='task__action update' onClick={updateHandler}>{status.toUpperCase()}</p>
                 <p className='task__action delete' onClick={deleteHandler}>Delete</p>
             </div>
         </div>

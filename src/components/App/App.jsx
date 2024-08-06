@@ -7,11 +7,12 @@ import Task from '../task/Task';
 import Button from '../form/Button';
 
 const App = () => {
-    const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem("task")));
-
     const filterTasks = (taskStatus) => {
         return tasks.filter((task) => task.completed == taskStatus);
     }
+
+    const [tasks, setTasks] = useState([]);
+    const [renderedTask, setRenderedTask] = useState(filterTasks("todo"));
 
     return (
         <div className='wrapper'>
@@ -24,8 +25,11 @@ const App = () => {
                         <Button text={"TODO"} type={"button"} onClickHandler={() => { }} />
                         <Button text={"Completed"} type={"button"} onClickHandler={() => { }} neutral={true} />
                     </div>
-                    <Task taskName={"Doing workout"} taskDescription={"Start at 6AM"} isCompleted={true} />
-                    <Task taskName={"Doing workout"} taskDescription={"Start at 6AM"} isCompleted={false} />
+                    {
+                        renderedTask.map((task) => {
+                            <Task taskName={task.name} taskDescription={task.description} status={task.status} />
+                        })
+                    }
                 </div>
             </div>
         </div>
