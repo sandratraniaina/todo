@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './App.css';
 
@@ -7,6 +7,12 @@ import Task from '../task/Task';
 import Button from '../form/Button';
 
 const App = () => {
+    const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem("task")));
+
+    const filterTasks = (taskStatus) => {
+        return tasks.filter((task) => task.completed == taskStatus);
+    }
+
     return (
         <div className='wrapper'>
             <h1>React basic To-do</h1>
