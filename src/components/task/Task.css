@@ -21,6 +21,7 @@
 .task .task__actions>p {
     text-decoration: underline;
     font-weight: 400;
+    cursor: pointer;
 }
 
 .task .task__actions>p.delete {

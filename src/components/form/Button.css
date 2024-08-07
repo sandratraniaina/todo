@@ -1,4 +1,4 @@
-button {
+.button {
     padding: .5rem 2rem;
 
     height: fit-content;
@@ -9,8 +9,9 @@ button {
     color: var(--clr-neutral-000);
     background: var(--clr-primary);
     border: none;
+    cursor: pointer;
 }
 
-button.neutral {
+.button.neutral {
     background: var(--clr-neutral-050);
 }

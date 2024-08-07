@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useId, useState } from 'react';
 
 import './App.css';
 
@@ -20,10 +20,23 @@ const App = () => {
         }
     ]);
     const [renderedTask, setRenderedTask] = useState(filterTasks(tasks, "todo"));
+    const [buttonStatus, setButtonStatus] = useState("neutral");
 
     function filterTasks(tasks, taskStatus) {
         return tasks.filter((task) => task.status == taskStatus);
     }
+
+    function handleClick(clickedButton) {
+        let status = "todo";
+
+        if (clickedButton != "todo") {
+            status = "complete";
+        }
+
+        setRenderedTask(filterTasks(tasks, status));
+        setButtonStatus(status);
+    }
+
 
     return (
         <div className='wrapper'>
@@ -33,8 +46,8 @@ const App = () => {
                 <hr />
                 <div className='task-container' >
                     <div className='tab-control'>
-                        <Button text={"TODO"} type={"button"} onClickHandler={() => setRenderedTask(filterTasks(tasks, "todo"))} />
-                        <Button text={"Completed"} type={"button"} onClickHandler={() => { setRenderedTask(filterTasks(tasks, "complete")) }} neutral={true} />
+                        <Button text={"TODO"} type={"button"} onClickHandler={() => handleClick("todo")} status={buttonStatus} />
+                        <Button text={"Completed"} type={"button"} onClickHandler={() => handleClick("complete")} status={buttonStatus} />
                     </div>
                     {
                         renderedTask.map((task, index) => {
