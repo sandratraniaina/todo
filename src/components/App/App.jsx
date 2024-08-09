@@ -21,6 +21,11 @@ const App = () => {
         }
     ]);
 
+    function addTask(task) {
+        tasks.push(task);
+        setTasks(tasks);
+    }
+
     return (
         <div className='wrapper'>
             <h1>React basic To-do</h1>
