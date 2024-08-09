@@ -31,7 +31,7 @@ const App = () => {
             <h1>React basic To-do</h1>
             <TasksContext.Provider value={tasks}>
                 <div className='container'>
-                    <Form />
+                    <Form handler={addTask} />
                     <hr />
                     <TaskContainer/>
                 </div>

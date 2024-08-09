@@ -8,7 +8,7 @@ const Field = ({ name, title, defaultValue, placeHolder, onChangeHandler }) => {
             <label htmlFor={name} >
                 {title}
             </label>
-            <input name='name' defaultValue={defaultValue} onChange={onChangeHandler} placeholder={placeHolder} />
+            <input name={name} defaultValue={defaultValue} onChange={onChangeHandler} placeholder={placeHolder} />
         </div> 
     )
 }
