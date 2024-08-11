@@ -10,7 +10,12 @@ const Task = ({ taskName, taskDescription, status, deleteHandler, updateHandler 
                 <p className='task__description' >{taskDescription}</p>
             </div>
             <div className='task__actions'>
-                <p className='task__action update' onClick={updateHandler}>{status.toUpperCase()}</p>
+                {
+                    status == "todo" ?
+                        <p className='task__action update' onClick={updateHandler}>Archive</p>
+                        :
+                        <p className='task__action update' onClick={updateHandler}>Revert</p>
+                }
                 <p className='task__action delete' onClick={deleteHandler}>Delete</p>
             </div>
         </div>
