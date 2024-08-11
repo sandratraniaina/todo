@@ -44,6 +44,6 @@ const TaskContainer = ({ deleteHandler, updateHandler }) => {
             }
         </div>
     )
-}   
+}
 
 export default TaskContainer
