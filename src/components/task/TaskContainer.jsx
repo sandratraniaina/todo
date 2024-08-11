@@ -1,27 +1,26 @@
-import React, { useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 
 import Button from '../form/Button';
 import TasksContext from '../../context/TasksContext';
 import Task from './Task';
 
 const TaskContainer = () => {
-    let tasks = React.useContext(TasksContext);
+    let tasks = useContext(TasksContext);
 
-    let [renderedTask, setRenderedTask] = useState(filterTasks(tasks, "todo"));
+    let [filter, setFilter] = useState("todo");
+    let [renderedTask, setRenderedTask] = useState(filterTasks(tasks, filter));
+
+    useEffect(() => {
+        setRenderedTask(filterTasks(tasks, filter));
+    }, [tasks, filter]);
+
 
     function filterTasks(tasks, taskStatus) {
         return tasks.filter((task) => task.status == taskStatus);
     }
 
-    function handleClick(clickedButton) {
-        let status = "todo";
-
-        if (clickedButton != "todo") {
-            status = "complete";
-        }
-
-        setRenderedTask(filterTasks(tasks, status));
-        // setButtonStatus(status);
+    function handleClick(filter) {
+        setFilter(filter);
     }
 
     return (

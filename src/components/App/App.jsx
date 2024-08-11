@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import './App.css';
 
@@ -22,8 +22,7 @@ const App = () => {
     ]);
 
     function addTask(task) {
-        tasks.push(task);
-        setTasks(tasks);
+        setTasks([...tasks, task]);
     }
 
     return (
@@ -33,7 +32,7 @@ const App = () => {
                 <div className='container'>
                     <Form handler={addTask} />
                     <hr />
-                    <TaskContainer/>
+                    <TaskContainer />
                 </div>
             </TasksContext.Provider>
         </div>
