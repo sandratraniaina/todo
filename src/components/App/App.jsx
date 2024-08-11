@@ -28,12 +28,21 @@ const App = () => {
     }
 
     function addTask(task) {
-        setTasks([...tasks, {...task, id: generateId()}]);
+        setTasks([...tasks, { ...task, id: generateId() }]);
     }
 
     function deleteTask(id) {
         setTasks(tasks.filter((task) => {
             return task.id != id;
+        }));
+    }
+
+    function updateTask(id) {
+        setTasks(tasks.map((task) => {
+            if (task.id == id) {
+                task.status = task.status == "todo" ? "complete" : "todo";
+            }
+            return task;
         }));
     }
 
@@ -44,7 +53,7 @@ const App = () => {
                 <div className='container'>
                     <Form handler={addTask} />
                     <hr />
-                    <TaskContainer deleteHandler={deleteTask} />
+                    <TaskContainer deleteHandler={deleteTask} updateHandler={updateTask} />
                 </div>
             </TasksContext.Provider>
         </div>

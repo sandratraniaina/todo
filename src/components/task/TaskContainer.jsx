@@ -4,7 +4,7 @@ import Button from '../form/Button';
 import TasksContext from '../../context/TasksContext';
 import Task from './Task';
 
-const TaskContainer = ({ deleteHandler }) => {
+const TaskContainer = ({ deleteHandler, updateHandler }) => {
     let tasks = useContext(TasksContext);
 
     let [filter, setFilter] = useState("todo");
@@ -39,11 +39,11 @@ const TaskContainer = ({ deleteHandler }) => {
             </div>
             {
                 renderedTask.map((task, index) => {
-                    return <Task key={index} taskName={task.name} taskDescription={task.description} status={task.status} updateHandler={() => { }} deleteHandler={() => { deleteHandler(task.id) }} />;
+                    return <Task key={index} taskName={task.name} taskDescription={task.description} status={task.status} updateHandler={() => { updateHandler(task.id) }} deleteHandler={() => { deleteHandler(task.id) }} />;
                 })
             }
         </div>
     )
-}
+}   
 
 export default TaskContainer
