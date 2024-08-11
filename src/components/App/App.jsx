@@ -10,19 +10,31 @@ import TasksContext from '../../context/TasksContext';
 const App = () => {
     const [tasks, setTasks] = useState([
         {
+            id: "task#1",
             name: "Doing workout",
             description: "Start at 6Am",
             status: "complete"
         },
         {
+            id: "task#2",
             name: "Cook",
             description: "Cook our meal",
             status: "todo"
         }
     ]);
 
+    function generateId() {
+        return Date.now().toString();
+    }
+
     function addTask(task) {
-        setTasks([...tasks, task]);
+        setTasks([...tasks, {...task, id: generateId()}]);
+    }
+
+    function deleteTask(id) {
+        setTasks(tasks.filter((task) => {
+            return task.id != id;
+        }));
     }
 
     return (
@@ -32,7 +44,7 @@ const App = () => {
                 <div className='container'>
                     <Form handler={addTask} />
                     <hr />
-                    <TaskContainer />
+                    <TaskContainer deleteHandler={deleteTask} />
                 </div>
             </TasksContext.Provider>
         </div>

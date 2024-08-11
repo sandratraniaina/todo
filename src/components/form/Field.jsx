@@ -9,7 +9,7 @@ const Field = ({ name, title, defaultValue, placeHolder, onChangeHandler }) => {
                 {title}
             </label>
             <input name={name} defaultValue={defaultValue} onChange={onChangeHandler} placeholder={placeHolder} />
-        </div> 
+        </div>
     )
 }
 

@@ -4,16 +4,14 @@ import Field from './Field';
 import Button from './Button';
 import './Form.css';
 
-function Form({handler}) {
+function Form({ handler }) {
 
     let [formData, setFormData] = useState({
         status: "todo"
     });
 
     function createTask() {
-        console.log(formData);
         if (formData["name"] != "" && formData["description"] != null) {
-            console.log("Hello there");
             handler(formData);
         }
     }

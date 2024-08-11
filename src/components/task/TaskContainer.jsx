@@ -4,14 +4,14 @@ import Button from '../form/Button';
 import TasksContext from '../../context/TasksContext';
 import Task from './Task';
 
-const TaskContainer = () => {
+const TaskContainer = ({ deleteHandler }) => {
     let tasks = useContext(TasksContext);
 
     let [filter, setFilter] = useState("todo");
     let [renderedTask, setRenderedTask] = useState(filterTasks(tasks, filter));
     let [buttonStatus, setButtonStatus] = useState({
         todo: "",
-        complete: "neutral" 
+        complete: "neutral"
     });
 
     useEffect(() => {
@@ -39,7 +39,7 @@ const TaskContainer = () => {
             </div>
             {
                 renderedTask.map((task, index) => {
-                    return <Task key={index} taskName={task.name} taskDescription={task.description} status={task.status} updateHandler={() => { }} deleteHandler={() => { }} />;
+                    return <Task key={index} taskName={task.name} taskDescription={task.description} status={task.status} updateHandler={() => { }} deleteHandler={() => { deleteHandler(task.id) }} />;
                 })
             }
         </div>
