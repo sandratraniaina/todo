@@ -1,6 +1,5 @@
 import React from 'react';
 
-import './Task.css';
 
 const Task = ({ taskName, taskDescription, status, deleteHandler, updateHandler }) => {
     return (

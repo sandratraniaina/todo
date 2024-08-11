@@ -1,7 +1,5 @@
 import React from 'react'
 
-import './Field.css';
-
 const Field = ({ name, title, defaultValue, placeHolder, onChangeHandler }) => {
     return (
         <div className='input-field'>

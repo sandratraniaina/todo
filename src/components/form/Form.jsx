@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import Field from './Field';
 import Button from './Button';
-import './Form.css';
 
 function Form({ handler }) {
 
