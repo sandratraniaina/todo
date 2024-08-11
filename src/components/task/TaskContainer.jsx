@@ -9,6 +9,10 @@ const TaskContainer = () => {
 
     let [filter, setFilter] = useState("todo");
     let [renderedTask, setRenderedTask] = useState(filterTasks(tasks, filter));
+    let [buttonStatus, setButtonStatus] = useState({
+        todo: "",
+        complete: "neutral" 
+    });
 
     useEffect(() => {
         setRenderedTask(filterTasks(tasks, filter));
@@ -21,13 +25,17 @@ const TaskContainer = () => {
 
     function handleClick(filter) {
         setFilter(filter);
+        setButtonStatus({
+            todo: filter == "todo" ? "" : "neutral",
+            complete: filter == "complete" ? "" : "neutral"
+        })
     }
 
     return (
         <div className='task-container' >
             <div className='tab-control'>
-                <Button text={"TODO"} type={"button"} onClickHandler={() => handleClick("todo")} status={""} />
-                <Button text={"Completed"} type={"button"} onClickHandler={() => handleClick("complete")} status={""} />
+                <Button text={"TODO"} type={"button"} onClickHandler={() => handleClick("todo")} status={buttonStatus.todo} />
+                <Button text={"Completed"} type={"button"} onClickHandler={() => handleClick("complete")} status={buttonStatus.complete} />
             </div>
             {
                 renderedTask.map((task, index) => {
