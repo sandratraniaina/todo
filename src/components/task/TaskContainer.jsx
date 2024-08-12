@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react';
 
 import Button from '../form/Button';
 import TasksContext from '../../context/TasksContext';
@@ -44,6 +44,6 @@ const TaskContainer = ({ deleteHandler, updateHandler }) => {
             }
         </div>
     )
-}
+};
 
-export default TaskContainer
+export default TaskContainer;

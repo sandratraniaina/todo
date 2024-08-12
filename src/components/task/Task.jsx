@@ -1,6 +1,3 @@
-import React from 'react';
-
-
 const Task = ({ taskName, taskDescription, status, deleteHandler, updateHandler }) => {
     return (
         <div className='task'>
@@ -19,6 +16,6 @@ const Task = ({ taskName, taskDescription, status, deleteHandler, updateHandler 
             </div>
         </div>
     )
-}
+};
 
 export default Task;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import Field from './Field';
 import Button from './Button';
@@ -39,6 +39,6 @@ function Form({ handler }) {
             <Button text={"Add"} type={"button"} onClickHandler={createTask} />
         </div>
     )
-}
+};
 
-export default Form
+export default Form;

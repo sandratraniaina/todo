@@ -8,6 +8,10 @@ import TasksContext from '../../context/TasksContext';
 const App = () => {
     const [tasks, setTasks] = useState(loadTasks);
 
+    useEffect(() => {
+        saveTasks(tasks);
+    }, [tasks]);
+
     function loadTasks() {
         let tasks = [];
 
@@ -17,10 +21,6 @@ const App = () => {
 
         return tasks;
     }
-
-    useEffect(() => {
-        saveTasks(tasks);
-    }, [tasks]);
 
     function saveTasks(tasks) {
         localStorage.setItem("tasks", JSON.stringify(tasks));

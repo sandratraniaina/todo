@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Field = ({ name, title, defaultValue, placeHolder, onChangeHandler }) => {
     return (
         <div className='input-field'>
@@ -9,6 +7,6 @@ const Field = ({ name, title, defaultValue, placeHolder, onChangeHandler }) => {
             <input name={name} defaultValue={defaultValue} onChange={onChangeHandler} placeholder={placeHolder} />
         </div>
     )
-}
+};
 
-export default Field
+export default Field;
