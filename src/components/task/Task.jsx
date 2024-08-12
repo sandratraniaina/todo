@@ -11,7 +11,7 @@ const Task = ({ taskName, taskDescription, status, deleteHandler, updateHandler 
             <div className='task__actions'>
                 {
                     status == "todo" ?
-                        <p className='task__action update' onClick={updateHandler}>Archive</p>
+                        <p className='task__action update' onClick={updateHandler}>Complete</p>
                         :
                         <p className='task__action update' onClick={updateHandler}>Revert</p>
                 }

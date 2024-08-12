@@ -51,7 +51,7 @@ const App = () => {
 
     return (
         <div className='wrapper'>
-            <h1>React basic To-do</h1>
+            <h1>React Todo</h1>
             <TasksContext.Provider value={tasks}>
                 <div className='container'>
                     <Form handler={addTask} />
