@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Field from './Field';
 import Button from './Button';
 
-function Form({ handler }) {
+const Form = ({ handler }) => {
 
     let [formData, setFormData] = useState({
         status: "todo"
