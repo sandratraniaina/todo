@@ -34,12 +34,28 @@ const TaskContainer = ({ deleteHandler, updateHandler }) => {
     return (
         <div className='task-container' >
             <div className='tab-control'>
-                <Button text={"TODO"} type={"button"} onClickHandler={() => handleClick("todo")} status={buttonStatus.todo} />
-                <Button text={"Completed"} type={"button"} onClickHandler={() => handleClick("complete")} status={buttonStatus.complete} />
+                <Button
+                    text={"TODO"}
+                    type={"button"}
+                    onClickHandler={() => handleClick("todo")}
+                    status={buttonStatus.todo}
+                />
+                <Button
+                    text={"Completed"}
+                    type={"button"} onClickHandler={() => handleClick("complete")}
+                    status={buttonStatus.complete}
+                />
             </div>
             {
                 renderedTask.map((task, index) => {
-                    return <Task key={index} taskName={task.name} taskDescription={task.description} status={task.status} updateHandler={() => { updateHandler(task.id) }} deleteHandler={() => { deleteHandler(task.id) }} />;
+                    return <Task
+                        key={index}
+                        taskName={task.name}
+                        taskDescription={task.description}
+                        status={task.status}
+                        updateHandler={() => { updateHandler(task.id) }}
+                        deleteHandler={() => { deleteHandler(task.id) }}
+                    />;
                 })
             }
         </div>
